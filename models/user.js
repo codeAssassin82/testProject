@@ -5,14 +5,22 @@ var bcrypt = require('bcryptjs');
 var jwt = require('jwt-simple');
 var moment = require('moment');
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = 'this is my secret';
 
 var User;
 
-var userSchema = new mongoose.Schema({
-  username: { type: String, unique: true, required: true },
-  password: { type: String, required: true }
-});
+// var userSchema = new mongoose.Schema({
+//   username: { type: String, unique: true, required: true },
+//   password: { type: String, required: true }
+// });
+
+  var userSchema = mongoose.Schema({
+    username: { type: String, unique: true, required: true },
+    password: { type: String, required: true },
+    // size: {type: String},
+    // checkbox: Boolean,
+    // updated: { type: Date, default: Date.now }
+  })
 
 userSchema.statics.authMiddleware = function(req, res, next) {
   var token = req.cookies.authtoken;

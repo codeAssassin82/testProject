@@ -2,7 +2,9 @@
   "name": "test-template",
   "description": "",
   "main": "app.js",
-  "authors": [],
+  "authors": [
+    "John Franklin <jfrankl6@mail.ccsf.edu>"
+  ],
   "license": "ISC",
   "moduleType": [],
   "homepage": "",
